@@ -1,9 +1,0 @@
-{
-  "routes": {
-    "/proyectAngular": {},
-    "/proyectAngular/info-user": {},
-    "/proyectAngular/login": {},
-    "/proyectAngular/tabledogs": {},
-    "/proyectAngular/user-dialog": {}
-  }
-}
