@@ -1,6 +1,6 @@
 
 export default {
-  basePath: 'C:/Program Files/Git/proyectAngular',
+  basePath: '/proyectAngular',
   supportedLocales: {
   "en-US": ""
 },
