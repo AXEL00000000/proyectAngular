@@ -1,0 +1,122 @@
+/* Estilos base */
+table {
+  width: 100%;
+}
+
+
+/* Imagen redonda */
+.dog-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e0e0e0;
+  background-color: #f5f5f5;
+}
+
+/* Contenedor de imagen */
+.image-container {
+  display: flex;
+  justify-content: center;
+  padding: 8px 0;
+}
+
+/* Mensaje de carga */
+.loading {
+  padding: 24px;
+  text-align: center;
+  font-style: italic;
+  color: #666;
+}
+
+/* Ajustes de celdas */
+.mat-column-image {
+  width: 70px;
+}
+
+.mat-mdc-cell {
+  vertical-align: middle;
+}
+
+.mat-mdc-header-cell {
+  font-weight: bold;
+  background-color: #f5f5f5;
+}
+
+/* Efecto hover para filas */
+.mat-mdc-row:hover {
+  background-color: #fafafa;
+}
+
+.container {
+  margin-bottom: 2rem;
+}
+
+
+.buscador .mat-form-field-flex {
+  height: 40px;
+}
+/* Ajustes específicos para el campo de búsqueda */
+.buscador .mat-form-field-wrapper {
+  padding-bottom: 0; /* Reduce el espacio inferior */
+}
+
+.buscador .mat-form-field-flex {
+  height: 48px; /* Igualamos altura al botón */
+  align-items: center; /* Centramos contenido verticalmente */
+}
+
+.buscador .mat-form-field-infix {
+  padding: 0; /* Eliminamos padding interno */
+  border-top: 0; /* Removemos espacio superior */
+}
+
+.buscador .mat-input-element {
+  height: 100%; /* Ocupa toda la altura disponible */
+  padding: 0 12px; /* Añadimos padding interno personalizado */
+  box-sizing: border-box; /* Incluye padding en altura total */
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between; /* Distribuye espacio entre elementos */
+  align-items: center; /* Centra verticalmente */
+  width: 100%; /* Asegura que ocupe todo el ancho disponible */
+  margin-bottom: 1rem;
+  margin-top: 4rem;
+}
+
+.btn-agregar {
+  padding: 12px 20px;
+  font-size: 1rem;
+  height: 48px;
+  margin-right: 20px; /* <-- Espacio desde el borde derecho */
+}
+
+.buscador {
+  width: auto;
+  min-width: 1000px;
+  margin-left: 16px;
+  margin-top: 16px; /* <-- este margen lo separa de arriba */
+
+  .mat-form-field-wrapper {
+    padding-bottom: 0;
+  }
+
+  .mat-form-field-flex {
+    height: 48px;
+    align-items: center;
+  }
+
+  .mat-form-field-infix {
+    padding: 0;
+    border-top: 0;
+  }
+
+  .mat-input-element {
+    height: 100%;
+    padding: 0 12px;
+    box-sizing: border-box;
+  }
+}
+

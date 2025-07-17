@@ -1,0 +1,50 @@
+<div class="login-container">
+  <mat-card>
+    <mat-card-header>
+      <h2>Iniciar Sesión</h2>
+    </mat-card-header>
+
+    <mat-card *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </mat-card>
+
+    <mat-card-content>
+      <form (ngSubmit)="login()">
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Email" name="email" required [(ngModel)]="user.email">
+          <mat-icon matSuffix>email</mat-icon>
+          <mat-hint>Introduce tu email registrado</mat-hint>
+        </mat-form-field>
+        
+        <mat-form-field appearance="outline">
+          <mat-label>Contraseña</mat-label>
+          <input matInput placeholder="Contraseña" name="password" required 
+                type="password" [(ngModel)]="user.password">
+          <mat-icon matSuffix>lock</mat-icon>
+          <mat-hint>Mínimo 8 caracteres</mat-hint>
+        </mat-form-field>
+        
+        <button 
+          mat-raised-button 
+          color="primary" 
+          (click)="login()" 
+          [disabled]="isLoading">
+            <span *ngIf="!isLoading">Iniciar sesión</span>
+            <span *ngIf="isLoading">Validando...</span>
+        </button>
+        
+        <div class="forgot-password">
+          <a href="#" style="color: #2e7d32; text-decoration: none;">¿Olvidaste tu contraseña?</a>
+        </div>
+      </form>
+    </mat-card-content>
+    
+    <mat-divider></mat-divider>
+    
+    <mat-card-actions>
+      <span style="color: #4a8c4a;">¿No tienes cuenta?</span>
+      <button mat-button color="primary">Regístrate</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

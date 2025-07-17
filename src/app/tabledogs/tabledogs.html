@@ -1,0 +1,92 @@
+<div class="container">
+  <app-info-user class="naranja"></app-info-user>
+</div>
+
+<div class="table-header">
+  <mat-form-field appearance="fill" class="buscador">
+    <mat-label>filtrar</mat-label>
+    <input
+      matInput
+      placeholder="Escribe para filtrar..."
+      #filterInput
+      (keyup)="applyFilter(filterInput.value)"
+    />
+  </mat-form-field>
+  <button mat-raised-button color="primary" class="btn-agregar" (click)="addDog()">Agregar</button>
+</div>
+
+
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef> id. </th>
+      <td mat-cell *matCellDef="let dog"> {{ dog.id }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Nombre </th>
+      <td mat-cell *matCellDef="let dog"> {{ dog.name }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="weight">
+      <th mat-header-cell *matHeaderCellDef> Peso (kg) </th>
+      <td mat-cell *matCellDef="let dog"> {{ dog.weight.metric }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="life_span">
+      <th mat-header-cell *matHeaderCellDef> Esperanza de vida </th>
+      <td mat-cell *matCellDef="let dog"> {{ dog.life_span }} </td>
+    </ng-container>
+
+<ng-container matColumnDef="bred_for">
+  <th mat-header-cell *matHeaderCellDef> Criado para </th>
+  <td mat-cell *matCellDef="let dog"> {{ dog.bred_for || 'N/A' }} </td>
+</ng-container>
+
+
+<ng-container matColumnDef="breed_group">
+  <th mat-header-cell *matHeaderCellDef> Grupo de raza </th>
+  <td mat-cell *matCellDef="let dog"> {{ dog.breed_group || 'N/A' }} </td>
+</ng-container>
+
+<ng-container matColumnDef="temperament">
+  <th mat-header-cell *matHeaderCellDef> Temperamento </th>
+  <td mat-cell *matCellDef="let dog"> {{ dog.temperament || 'N/A' }} </td>
+</ng-container>
+
+<ng-container matColumnDef="image">
+  <th mat-header-cell *matHeaderCellDef> Imagen </th>
+  <td mat-cell *matCellDef="let dog">
+    <div class="image-container">
+      <img 
+        [src]="dog.image.url" 
+        alt="{{dog.name}}"
+        class="dog-image"
+        onerror="this.src='https://material.angular.dev/assets/img/examples/shiba2.jpg'"
+      >
+    </div>
+  </td>
+</ng-container>
+
+
+     <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Acciones </th>
+      <td mat-cell *matCellDef="let dog">
+        <button mat-button color="primary" (click)="viewMore(dog)">Ver Más</button>
+        <button mat-button color="accent" (click)="modify(dog)">Modificar</button>
+        <button mat-button color="warn" (click)="delete(dog)">Eliminar</button>
+      </td>
+    </ng-container>
+
+  
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator [pageSize]="5"
+                 [pageSizeOptions]="[5, 10, 20]"
+                 showFirstLastButtons
+                 aria-label="Selecciona página de razas de perros">
+  </mat-paginator>
+</div>
+

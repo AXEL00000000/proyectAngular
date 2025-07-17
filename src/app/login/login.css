@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+  font-family: 'Poppins', sans-serif;
+}
+
+.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  padding: 20px;
+}
+
+.user-details {
+  text-align: center;
+  padding: 20px;
+}
+
+.user-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 20px;
+  border: 4px solid #ff8f00;
+}
+
+.user-name {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.user-email {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.flip-button {
+  margin-top: 30px !important;
+  background: linear-gradient(to right, #4CAF50, #2E7D32) !important;
+}
+
+
+.login-container {
+  perspective: 1000px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+
+.flip-card {
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+mat-card {
+  max-width: 420px;
+  margin: 2em auto;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(41, 98, 44, 0.2);
+  overflow: hidden;
+  background: white;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+mat-card:hover {
+  transform: translateY(-5px) rotateX(5deg);
+  box-shadow: 0 20px 40px rgba(41, 98, 44, 0.3);
+}
+
+mat-card-header {
+  background: linear-gradient(135deg, #ff8f00, #ffa000);
+  color: white;
+  padding: 30px 20px;
+  margin-bottom: 30px;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+mat-card-header h2 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 28px;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+mat-card-content {
+  padding: 0 40px 20px;
+}
+
+mat-form-field {
+  display: block;
+  margin-bottom: 25px;
+  transition: all 0.3s;
+}
+
+mat-form-field:hover {
+  transform: scale(1.02);
+}
+
+mat-label {
+  color: #d4960f;
+  font-weight: 500;
+}
+
+input.mat-input-element {
+  color: #c75000;
+  padding: 12px 0;
+  font-size: 16px;
+}
+
+.mat-form-field-outline {
+  border-radius: 10px !important;
+}
+
+.mat-form-field-outline-thick {
+  color: #ffae17 !important;
+}
+
+mat-icon {
+  color: #d47100;
+  transition: all 0.3s;
+}
+
+mat-form-field:hover mat-icon {
+  transform: scale(1.2);
+  color: #d3c71c;
+}
+
+button[mat-raised-button] {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  background: linear-gradient(to right, #ff8f00, #ffa000);
+  color: white;
+  transition: all 0.4s ease;
+  margin-top: 15px;
+  border-radius: 50px;
+  overflow: hidden;
+  position: relative;
+  border: none;
+  box-shadow: 0 5px 15px rgba(255, 143, 0, 0.3);
+}
+
+button[mat-raised-button]:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(184, 110, 0, 0.4);
+  background: linear-gradient(to right, #ffc72d, #a84401);
+}
+
+button[mat-raised-button]:active {
+  transform: translateY(1px);
+}
+
+button[mat-raised-button]::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 200%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(30deg);
+  transition: all 0.3s;
+}
+
+button[mat-raised-button]:hover::after {
+  left: 100%;
+}
+
+.forgot-password {
+  margin: 15px 0;
+  text-align: right;
+}
+
+.forgot-password a {
+  color: #c58102;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.forgot-password a:hover {
+  color: #2e7d32;
+}
+
+.forgot-password a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #aa5200;
+  transition: width 0.3s;
+}
+
+.forgot-password a:hover::after {
+  width: 100%;
+}
+
+.mat-card-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.mat-card-actions span {
+  color: #c29313;
+  margin-right: 10px;
+}
+
+.mat-card-actions button {
+  color: #7d612e;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.mat-card-actions button:hover {
+  transform: translateY(-2px);
+  color: #ff9100;
+}
+
+/* Animaciones */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+mat-card {
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* Efecto de olas decorativo */
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%232e7d32" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%232e7d32" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%232e7d32"/></svg>');
+  background-size: cover;
+  z-index: -1;
+}
+
+/* Validaciones */
+.valid {
+  color: #4caf50;
+}
+
+.invalid {
+  color: #f44336;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .login-container {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  mat-card {
+    margin: 1em;
+    max-width: none;
+  }
+  
+  mat-card-content {
+    padding: 0 20px 20px;
+  }
+}

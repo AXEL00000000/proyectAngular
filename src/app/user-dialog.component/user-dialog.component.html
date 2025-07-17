@@ -1,0 +1,14 @@
+<div class="user-card">
+    <h2>Información del Usuario</h2>
+    <img [src]="data.image" alt="Foto de usuario" class="user-image" />
+
+    <div class="user-info">
+        <p><strong>Nombre:</strong> {{ data.name }}</p>
+        <p><strong>Email:</strong> {{ data.email }}</p>
+        <p><strong>Contraseña:</strong> {{ data.password }}</p>
+    </div>
+
+    <button mat-stroked-button color="primary" mat-dialog-close class="close-button">
+        Cerrar
+    </button>
+</div>
